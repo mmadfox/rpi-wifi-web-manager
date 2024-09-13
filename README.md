@@ -7,6 +7,19 @@ I haven't considered Cockpit, as it doesn't fit my specific use case.
 Inspired by an article:
 [Host a Wi-Fi hotspot with a Raspberry Pi](https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/)
 
+### Installation from source 
+*!!! Install golang before building the project* (golang)[https://go.dev/doc/install]
+
+```bash
+$ git clone https://github.com/mmadfox/rpi-wifi-web-manager.git
+$ cd rpi-wifi-web-manager
+$ make build
+$ sudo mv ./build/linux-arm64-webnm /usr/local/bin/webnm
+$ sudo cp ./scripts/webnm.service /etc/systemd/system/
+$ sudo systemctl enable webnm.service
+$ sudo systemctl start webnm.service
+$ sudo systemctl status webnm.service
+```
 ### Screenshots
 ![List](docs/images/webnm1.png)
 ![New connection](docs/images/webnm2.png)

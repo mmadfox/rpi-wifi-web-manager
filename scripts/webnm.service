@@ -8,7 +8,7 @@ Requires=network-online.target
 
 [Service]
 Type=simple
-ExecStart=webnm
+ExecStart=/usr/local/bin/webnm -wifi.iface wlan0 -http.host 0.0.0.0 -http.port 3003
 Restart=always
 RestartSec=10
 Environment=PATH=/usr/local/bin:/usr/bin:/bin
