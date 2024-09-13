@@ -8,7 +8,7 @@ Inspired by an article:
 [Host a Wi-Fi hotspot with a Raspberry Pi](https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/)
 
 ### Installation from source 
-*!!! Install golang before building the project* (golang)[https://go.dev/doc/install]
+*!!! Install golang before building the project* [golang](https://go.dev/doc/install)
 
 ```bash
 $ git clone https://github.com/mmadfox/rpi-wifi-web-manager.git
