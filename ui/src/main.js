@@ -197,7 +197,7 @@ render.listenEvents = function () {
       const wifiItem = e.target.closest(".wifi-item");
       const ssid = wifiItem.querySelector(".wifi-ssid").textContent;
       const form = document.querySelector("#wifi-connect-form");
-      render.lockWiFiList = true;
+      controller.lockWiFiList = true;
       form.classList.remove("hidden");
 
       const onConnect = () => {
