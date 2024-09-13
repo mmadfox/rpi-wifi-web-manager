@@ -4,7 +4,7 @@ Webnm is a cobbled together tool for managing Wi-Fi networks and switching the d
 
 I haven't considered Cockpit, as it doesn't fit my specific use case.
 
-Inspired by an article:
+Inspired by the article:
 [Host a Wi-Fi hotspot with a Raspberry Pi](https://www.raspberrypi.com/tutorials/host-a-hotel-wifi-hotspot/)
 
 ### Installation from source 
