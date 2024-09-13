@@ -1,0 +1,17 @@
+[Unit]
+Description=WebNM
+Requires=NetworkManager.service
+After=NetworkManager.service
+After=network.target
+Requires=network.target
+Requires=network-online.target
+
+[Service]
+Type=simple
+ExecStart=webnm
+Restart=always
+RestartSec=10
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=multi-user.target

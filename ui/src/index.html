@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wi-Fi Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="wifi-connect-form" class="form-overlay hidden">
+      <div class="wifi-form">
+        <h2>Connect to Wi-Fi</h2>
+        <div class="form-group">
+          <label for="ssid">SSID:</label>
+          <input disabled type="text" id="ssid" placeholder="Enter SSID" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter password" />
+        </div>
+        <div class="form-group">
+          <label for="password">Save:</label>
+          <input type="checkbox" id="save-password" checked />
+        </div>
+        <div class="form-actions">
+          <button class="btn connect">Connect</button>
+          <button class="btn close">Close</button>
+        </div>
+      </div>
+    </div>
+    <div id="loader" class="hidden">
+      <h1>Loading...</h1>
+    </div>
+    <div id="msg" class="hidden">
+      <div id="msg-text"></div>
+      <button class="btn" onclick="msg.close()">Close</button>
+    </div>
+    <div id="ifaces-container" class="ifaces-container">
+      <div id="ifaces" class="ifaces"></div>
+    </div>
+    <div id="active-connection" class="_none">
+      <h3>WIFI Connection:</h3>
+      <span id="active-ssid" class="ssid"></span>
+      <button id="btn-disconnect" class="btn-disconnect">Disconnect</button>
+    </div>
+    <div class="container">
+      <h1 id="no-data" class="none">No data</h1>
+      <div id="wifi-list" class="wifi-list"></div>
+    </div>
+    <template id="wifi-item-template">
+      <div class="wifi-item">
+        <span class="wifi-ssid"></span>
+        <span class="wifi-freq"></span>
+        <span class="wifi-signal"></span>
+        <button class="btn-connect">Connect</button>
+      </div>
+    </template>
+    <template id="iface-item-template">
+      <div data-iface="" class="iface"></div>
+    </template>
+    <script src="main.js"></script>
+  </body>
+</html>

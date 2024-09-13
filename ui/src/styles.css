@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.none {
+    display: none;
+}
+
+#no-data {
+    color: #fff;
+}
+
+#active-connection {
+    position: fixed;
+    top: 61px;
+    width: 100%;
+    padding: 20px;
+    background-color: #252526;
+    text-align: center;
+    z-index: 100;
+}
+
+#active-connection .ssid {
+    font-size: 1.5em;
+    color: #dddddd; 
+}
+
+.btn-disconnect {
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn-disconnect:hover {
+    background-color: #005fa1;
+}
+
+.container {
+    max-width: 800px;
+    width:  100%;
+    min-height: 100%;
+    text-align: center;
+}
+
+.container h1 {
+    color: #dddddd;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.container-top {
+    margin-top: 60px;
+}
+
+.wifi-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 100%;
+    padding-top: 120px;
+}
+
+.wifi-item {
+    background-color: #333333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.wifi-item:hover {
+    background-color: #3e3e3e;
+}
+
+.wifi-ssid {
+    color: #dddddd;
+    text-align: left;
+    width: 50%;
+    font-weight: 600;
+}
+
+.wifi-freq, .wifi-signal {
+    margin-left: 10px;
+}
+
+.btn-connect {
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.btn-connect:hover {
+    background-color: #005fa1;
+}
+
+
+#loader {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+}
+
+#msg {
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+}
+
+#msg > .btn {
+   display: block;
+   margin-top: 10px; 
+}
+
+#msg-text {
+    display: block;
+    font-size: 1.3em;
+}
+
+.form-overlay {
+    position: fixed;
+    z-index: 15000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.wifi-form {
+    background-color: #252526;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3c3c3c;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    width: 5%;
+}
+
+input::placeholder {
+    color: #6a6a6a;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005f99;
+}
+
+.btn.close {
+    background-color: #f14c4c;
+}
+
+.btn.close:hover {
+    background-color: #c73c3c;
+}
+
+.ifaces-container {
+  position: fixed;
+  background-color: #252526;
+  border-bottom: 1px solid #393939;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+}
+
+.ifaces {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.iface {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.iface:not(.active):hover {
+  background-color: #007acc;
+}
+
+.iface.active {
+  background-color: #007acc;
+  cursor: default; 
+  pointer-events: none; 
+}
+
+.iface.disabled {
+  color: #9f9f9f;
+  cursor: default; 
+  border: none;
+  pointer-events: none; 
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .container h1 {
+        font-size: 1.5em;
+    }
+
+    #active-connection {
+        font-size: 0.9em;
+    }
+
+    .btn-disconnect {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .wifi-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wifi-ssid {
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.3em;
+    }
+
+    .wifi-freq, .wifi-ssid, .wifi-signal, .btn-connect {
+        width: 100%;
+    }
+
+    .btn-connect {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .btn:hover {
+        background-color: #007acc;
+    }
+}
