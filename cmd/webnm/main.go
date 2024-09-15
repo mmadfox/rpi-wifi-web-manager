@@ -37,7 +37,7 @@ func main() {
 
 	app.Get("/api/wifi-list", handlers.WiFiList())
 	app.Post("/api/wifi-conn", handlers.WiFiDial(*wifiIface))
-	app.Post("/api/wifi-close", handlers.WiFiClose())
+	app.Post("/api/wifi-close", handlers.WiFiClose(*wifiIface))
 
 	app.Get("/api/ifaces", handlers.Ifaces())
 	app.Post("/api/ifaces/switch", handlers.SwitchIface())

@@ -6,9 +6,9 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func WiFiClose() fiber.Handler {
+func WiFiClose(iface string) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
-		err := linux.CloseWiFi()
+		err := linux.CloseWiFi(iface)
 		if err != nil {
 			return ctx.Status(fiber.StatusInternalServerError).JSON(errorResponse{
 				Error: err.Error(),

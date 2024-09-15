@@ -6,10 +6,10 @@ import (
 	"strings"
 )
 
-func CloseWiFi() error {
+func CloseWiFi(iface string) error {
 	q := []string{
 		"nmcli",
-		"dev", "disconnect", "wlan0",
+		"dev", "disconnect", iface,
 	}
 	str := strings.Join(q, " ")
 	cmd := exec.Command("sh", "-c", str)
